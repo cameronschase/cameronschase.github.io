@@ -1,0 +1,1 @@
+This is a website that I created to document my journey as a CS and Math student. My passion is technology and I am also willing to learn new skills and add to my already extensive realm of knowledge.
