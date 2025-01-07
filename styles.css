@@ -1,0 +1,23 @@
+/* Ensure body and html take the full screen size */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  /* Container to hold the image */
+  .cover-photo {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* 100% of the viewport height */
+    overflow: hidden;
+  }
+  
+  /* Make the image cover the full screen */
+  .cover-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the screen while maintaining aspect ratio */
+    object-position: center center; /* Centers the image */
+  }
+  
