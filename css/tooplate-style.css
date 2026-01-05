@@ -568,11 +568,6 @@ a.btn-custom{
     margin-top: auto;
 }
 
-#about .row {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 #about .col-md-4 {
   display: flex;
 }
@@ -586,7 +581,6 @@ a.btn-custom{
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
 }
 
 #about .skill-container {
