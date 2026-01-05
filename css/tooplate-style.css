@@ -558,10 +558,6 @@ a.btn-custom{
   opacity: 1;
 }
 
-.col-md-4 {
-    display: flex;
-}
-
 .service-thumb {
     display: flex;
     flex-direction: column;
@@ -571,6 +567,32 @@ a.btn-custom{
 .skill-container {
     margin-top: auto;
 }
+
+#about .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#about .col-md-4 {
+  display: flex;
+}
+
+#about .col-md-4 > a {
+  display: flex;
+  width: 100%;
+}
+
+#about .service-thumb {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+#about .skill-container {
+  margin-top: auto;
+}
+
 
 
 /*---------------------------------------
