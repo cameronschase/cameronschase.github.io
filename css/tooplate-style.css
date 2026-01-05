@@ -522,7 +522,7 @@ a.btn-custom{
 
 
 /*---------------------------------------
-  Work section              
+  Projects section              
 -----------------------------------------*/
 
 .work-thumb {
@@ -558,6 +558,19 @@ a.btn-custom{
   opacity: 1;
 }
 
+.col-md-4 {
+    display: flex;
+}
+
+.service-thumb {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.skill-container {
+    margin-top: auto;
+}
 
 
 /*---------------------------------------
