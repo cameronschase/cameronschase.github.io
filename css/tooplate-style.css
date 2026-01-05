@@ -811,10 +811,13 @@ footer p {
 @media (min-width: 992px) {
   #about .row {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;       /* keep all 3 on one line */
   }
 
   #about .col-md-4 {
+    float: none;             /* Bootstrap 3 uses floats; disable them here */
+    flex: 0 0 33.333333%;    /* exactly 3 columns */
+    max-width: 33.333333%;
     display: flex;
   }
 
