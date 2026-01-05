@@ -568,27 +568,6 @@ a.btn-custom{
     margin-top: auto;
 }
 
-#about .col-md-4 {
-  display: flex;
-}
-
-#about .col-md-4 > a {
-  display: flex;
-  width: 100%;
-}
-
-#about .service-thumb {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-#about .skill-container {
-  margin-top: auto;
-}
-
-
-
 /*---------------------------------------
   Contact section              
 -----------------------------------------*/
@@ -825,4 +804,32 @@ footer p {
 		padding:40px;
 		padding-top:0;
 	}
+}
+
+/*Project section column alignment fix:*/
+
+@media (min-width: 992px) {
+  #about .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #about .col-md-4 {
+    display: flex;
+  }
+
+  #about .col-md-4 > a {
+    display: flex;
+    width: 100%;
+  }
+
+  #about .service-thumb {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #about .skill-container {
+    margin-top: auto;
+  }
 }
