@@ -1,437 +1,340 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <head>
-     <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-     <meta name="google-site-verification" content="10mtfXcoTwZGBOkKfcpAVhlqliB4SzsrtYAIcs1bolk" />
-     <meta name="description"
-          content="Cameron Chase is a student in Brandeis' class of 2027, pursuing majors in Computer Science and Applied Mathematics. 
-          He has interests in both hardware and software engineering and enjoys skiing, working out, and playig the guitar in his 
-          free time. Cameron is currently looking for summer internships and other part-time opportunities.">
-     <meta name="keywords"
-          content="Cameron Chase, Cam Chase, Brandeis, Brandeis University, student, computer science, cs, math, mathematics, applied math, applied mathematics,
-          programming, softare engineering, hardware engineering">
-     <meta name="resource-type" content="document">
-     <meta name="revisit-after" content="5 days">
-     <meta name="classification" content="Personal">
-     <meta name="robots" content="ALL">
-     <meta name="distribution" content="Global">
-     <meta name="rating" content="Safe For Kids">
-     <meta name="copyright" content="2025, Cameron Chase">
-     <meta name="author" content="Cameron Chase">
-
-     <title>Cameron Chase's Website</title>
-     <link rel="icon" type="image/x-icon" href='./images/favicon.ico' />
-
-     <!-- AMALGAMATION OF CSS-->
-     <link rel='stylesheet' type='text/css' href='bootstrap/css/bootstrap.min.css'>
-     <link rel='stylesheet' type='text/css' href='css/linea.css'>
-     <link rel='stylesheet' type='text/css' href='css/ionicons.min.css'>
-     <link rel='stylesheet' type='text/css' href='css/owl.carousel.css'>
-     <link rel='stylesheet' type='text/css' href='css/magnific-popup.css'>
-     <link rel='stylesheet' type='text/css' href='css/style.html'>
-     <link rel="stylesheet" href="css/bootstrap.min.css">
-     <link rel="stylesheet" href="css/animate.css">
-     <link rel="stylesheet" href="css/magnific-popup.css">
-     <link rel="stylesheet" href="css/font-awesome.min.css">
-     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
-     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
-     <!-- MAIN CSS -->
-     <link rel="stylesheet" href="css/tooplate-style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Website</title>
+<meta name="description" content="Cameron Chase — Brandeis '27, double-major in Computer Science and Applied Mathematics. projects, achievements, and a scrapbook.">
+<meta name="author" content="Cameron Chase">
+<meta property="og:title" content="Cameron Chase">
+<meta property="og:description" content="Brandeis '27 · CS + Applied Math · projects, achievements, photos.">
+<meta property="og:type" content="website">
+<meta name="google-site-verification" content="10mtfXcoTwZGBOkKfcpAVhlqliB4SzsrtYAIcs1bolk">
+<link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-     <!-- PRE LOADER -->
-     <div class="preloader">
-          <div class="spinner">
-               <span class="spinner-rotate"></span>
+<!-- floating knight that appears on chess hover -->
+<div class="knight" id="knight">♞</div>
+
+<nav>
+  <a href="#about" class="hide-sm">About</a>
+  <a href="#work" class="hide-sm">Work</a>
+  <a href="#projects">Projects</a>
+  <a href="photos.html" class="hide-sm">Photos</a>
+  <a href="#contact" class="cta">Contact Me</a>
+</nav>
+
+<!-- ── HERO ── -->
+<header class="hero">
+  <!-- decorative motifs -->
+  <span class="decor faint hide-sm" style="top:80px;left:40px;font-size:260px;transform:rotate(-12deg);color:var(--sky-deep)">♞</span>
+  <span class="decor soft" style="top:140px;right:40px;font-size:140px;color:var(--sky-deep);font-style:italic">π</span>
+  <span class="decor soft hide-sm" style="bottom:60px;right:140px;font-size:78px;color:var(--sky);transform:rotate(8deg)">♪ ♫</span>
+  <!-- snowy ridgeline at the bottom of hero -->
+  <svg class="decor faint hide-sm" style="bottom:-10px;left:0;width:100%;height:160px;color:var(--sky-deep)" viewBox="0 0 1200 160" preserveAspectRatio="none" fill="none">
+    <path d="M0 160 L120 90 L200 120 L320 50 L420 100 L540 30 L660 90 L780 60 L900 110 L1020 50 L1140 100 L1200 80 L1200 160 Z" fill="currentColor" opacity=".6"/>
+    <path d="M0 160 L80 120 L180 140 L300 100 L420 130 L520 100 L640 130 L760 110 L880 135 L1000 105 L1120 130 L1200 115 L1200 160 Z" fill="currentColor"/>
+  </svg>
+  <div class="container">
+    <div class="eyebrow">Brandeis University '27 · Computer Science + Applied Mathematics · Lincoln, MA</div>
+    <h1>
+      Hey, I'm<br>
+      <span class="italic">Cameron</span> <span class="ampersand">&amp;</span> I make<br>
+      things that <span class="italic">work</span>.
+    </h1>
+    <p class="tagline">
+      4th-year undergraduate student majoring in <em>Computer Science</em> and <em>Applied Mathematics</em> —
+      shipping side projects, running a chess club, editing a law journal, and chasing snow when the semester lets me.
+    </p>
+    <div class="quick">
+      <span>Looking for Summer 2026 Internship Opportunities</span>
+      <span>Contact Me!</span>
+    </div>
+
+    <!-- Currently widget -->
+    <div class="currently">
+      <div class="head">
+        <span>currently.log</span>
+        <span class="blink">LIVE</span>
+      </div>
+      <ul>
+        <li><b>Building</b>a Discord bot rewrite (CyborgCammy v2)</li>
+        <li><b>Reading</b>Beyond Good and Evil - Friedrich Nietzsche</li>
+        <li><b>Playing</b>1.d4 going for a Catalan</li>
+        <li><b>Listening</b>Piano Trio No. 1 in B Major, Op. 8: Allegro con Brio - Johannes Brahms</li>
+        <li><b>Last Skied</b>Loon Mountain - 14 days skied this season</li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <span class="decor faint hide-sm" style="top:40px;right:60px;font-size:300px;color:var(--sky-deep);font-style:italic">∫</span>
+  <span class="decor soft hide-sm" style="bottom:60px;left:30px;font-size:120px;color:var(--sky)">❄</span>
+  <div class="container">
+    <div class="sec-label">01 · About</div>
+    <h2 class="sec-title">A short <em>bio</em>, mostly true.</h2>
+
+    <div class="about-grid">
+      <div>
+        <p>
+          I'm a rising senior at Brandeis pursuing two B.S. degrees in <strong>Computer Science</strong>
+          and <strong class="cool">Applied Mathematics</strong>. I'm into algorithms, cybersecurity,
+          and machine learning, and I like building things end-to-end.
+        </p>
+        <p>
+          When class lets up I'm running tournaments for the chess club I preside over,
+          editing for the Brandeis Law Journal, lifting, playing guitar, or finding a way
+          back to a mountain. I keep a notebook of half-finished side projects and slowly
+          unstick the ones that won't quit.
+        </p>
+      </div>
+      <div class="about-side">
+        <dl>
+          <dt>Name:</dt><dd>Cameron Chase</dd>
+          <dt>School:</dt><dd>Brandeis University</dd>
+          <dt>Class of</dt><dd>2027</dd>
+          <dt>Majors:</dt><dd>Computer Science · Applied Mathematics</dd>
+          <dt>Hometown:</dt><dd>Lincoln, MA</dd>
+          <dt>Currently:</dt><dd>Waltham, MA</dd>
+          <dt>Links:</dt><dd>github · linkedin · x · email</dd>
+        </dl>
+        <a href="documents/Resume.pdf" class="download" download>
+          ↓ Download Resume
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EDUCATION ── -->
+<section id="education">
+  <span class="decor faint hide-sm" style="top:80px;left:30px;font-size:260px;color:var(--sky-deep);font-style:italic">Σ</span>
+  <span class="decor soft hide-sm" style="bottom:120px;right:60px;font-size:110px;color:var(--sky-deep);transform:rotate(8deg)">♟</span>
+  <div class="container">
+    <div class="sec-label">02 · Education</div>
+    <h2 class="sec-title">Where I've <em>Studied</em>.</h2>
+
+    <div class="timeline">
+      <div class="edu-item">
+        <div class="edu-year">
+          2023 → <span class="now">Now</span>
+        </div>
+        <div>
+          <div class="edu-school">
+            Brandeis University
+            <span class="gpa">GPA: 3.693</span>
           </div>
-     </div>
-
-     <!-- HOME SECTION -->
-     <section id="home" class="parallax-section">
-          <div class="container">
-               <div class="row">
-                    <div class="col-md-offset-5 col-md-7 col-sm-12">
-                         <div class="home-thumb">
-                              <h1 class="wow fadeInUp" data-wow-delay="0.4s">Hey, I'm Cameron</h1>
-                              <p class="wow fadeInUp white-color" data-wow-delay="0.6s">Student, Tech Enthusiast</p>
-                              <a href="#service" class="wow fadeInUp smoothScroll btn btn-default section-btn"
-                                   data-wow-delay="1s">More About Me</a>
-                         </div>
-                    </div>
-               </div>
+          <div class="edu-meta">B.S. Computer Science, Applied Mathematics · Dean's List Every Semester</div>
+          <div class="pill-row">
+            <b>cs coursework</b>
+            <div class="pills">
+              <span class="pill">Data Structures &amp; Algorithms</span>
+              <span class="pill">Computer Systems</span>
+              <span class="pill">System &amp; Network Security</span>
+              <span class="pill">Ethics of Tech</span>
+              <span class="pill">Advanced Java</span>
+              <span class="pill">Python</span>
+            </div>
           </div>
-     </section>
-
-     <!-- SERVICE SECTION -->
-     <section id="service" class="parallax-section">
-          <div class="wow fadeInUp container" data-wow-delay="0.2s">
-               <div class="row">
-                    <div class='row'>
-                         <div class='col-md-4'>
-                              <ul class='info-list'>
-                                   <li>
-                                        <strong>Name:</strong>
-                                        <span>Cameron Chase</span>
-                                   </li>
-                                   <li>
-                                        <strong>Pronouns:</strong>
-                                        <span>He/Him/His</span>
-                                   </li>
-                                   <li>
-                                        <strong>School:</strong>
-                                        <span>Brandeis University</span>
-                                   </li>
-                                   <li>
-                                        <strong>Age:</strong>
-                                        <span>20 Years</span>
-                                   </li>
-                                   <li>
-                                        <strong>Hometown:</strong>
-                                        <span>Lincoln, MA</span>
-                                   </li>
-                                   <li>
-                                        <ul class="social-icon">
-                                             <li><a target="_blank" href="https://x.com/CamChase_"
-                                                       class="fa fa-times"></a></li>
-                                             <li><a target="_blank" href="https://www.facebook.com/profile.php?id=100092399980099"
-                                                       class="fab fa-facebook"></a></li>
-                                             <li><a target="_blank" href="https://www.linkedin.com/in/cameronschase/"
-                                                       class="fab fa-linkedin"></a></li>
-                                             <li><a target="_blank" href="https://github.com/cameronschase"
-                                                       class="fab fa-github"></a></li>
-                                        </ul>
-                                   </li>
-                              </ul>
-                         </div>
-                         <div class='col-md-8'>
-                              <div class='about-text'>
-                                   <p>
-                                        I am a student in Brandeis' class of 2027, pursuing majors in Computer Science
-                                        and Applied Mathematics. I am intrigued by technology and I enjoy doing hands-on projects and solving problems methodically to demonstrate my knowledge and learn new things. I am
-                                        comfortable coding and web developing using an assortment of programming languages listed below. I am also proficient writing proper pseudocode and using JUnit and PyUnit to debug and test my code. I also have familiarity using Windows, Mac, and Ubuntu Linux 
-                                        operating systems. I also have experience using both the Microsoft Office and Adobe Creative Cloud suites. 
-                                   </p>
-                                   <p>When I'm not in class, I'm often trying to gain more knowledge about the different aspects of technology, playing chess, working out, skiing, or hanging out with friends.</p>
-                                   <p>
-                                   I'm also involved in a variety of extracurriculars on campus, including the Brandeis Chess Club and the Brandeis Law Journal.
-                                   </p>
-                              </div>
-                              <div class='about-btns'>
-                                   <a target="_blank" href='Resume.pdf' class='btn-custom btn-color'
-                                        download='Resume'>
-                                        Download Resume
-                                   </a>
-                              </div>
-                         </div>
-                    </div>
-               </div>
+          <div class="pill-row">
+            <b>math coursework</b>
+            <div class="pills">
+              <span class="pill">Calc I–III</span>
+              <span class="pill">Linear Algebra</span>
+              <span class="pill">Mathematical Proofs</span>
+              <span class="pill">Mathematical Logic</span>
+              <span class="pill">Discrete Structures</span>
+            </div>
           </div>
-     </section>
-
-     <!-- ABOUT SECTION -->
-     <section id="about" class="parallax-section">
-          <div class="container">
-               <div class="row">
-                    <div class="wow fadeInUp section-title" data-wow-delay="0.2s">
-                         <h2>My Education</h2>
-                    </div>
-                    <ul class='timeline'>
-                         <li>
-                              <div class='wow fadeInUp timeline-content' data-wow-delay="0.1s">
-                                   <h4>Brandeis University</h4>
-                                   <em>
-                                        <span>Bachelor's Degrees</span>
-                                        <span> | </span>
-                                        <span>2023-Present</span>
-                                        <span> | </span>
-                                        <span>Cumulative GPA: 3.62</span>
-                                   </em>
-                                   <p><b>Major 1:</b> Computer Science (BS)</p>
-                                   <p><b>Major 2:</b> Applied Mathematics (BS)</p>
-                                   <p>
-                                        <b>Relevant Coursework:</b> Problem Solving In Python, Ethics of Technology, 
-                                        Advanced Techniques in Java, Data Structures & Algoritms, Calc I-III, Linear Algebra, Mathematical Proofs, 
-                                        Mathematical Logic, Discrete Structures, Computer Systems, System & Network Security, Algorithms
-                                   </p>
-                                   <p><b>Coding Skills:</b> C, Java (Including JUnit), Python (Including PyUnit), HTML, CSS, JavaScript, Node.js, Shell, Psuedocode</p>
-                                   <p><b>Operating Systems:</b> MacOS, Windows, Ubuntu Linux</p>
-                                   <p><b>Programs:</b> Adobe Creative Cloud, Microsoft Office, Fusion 360, LaTeX, Jupyter Lab, Visual Studio, Git</p>
-                                   <p><b>Awards:</b> Dean's List Every Semester (3.5+ Semester GPA Required)</p>
-                              </div>
-                         </li>
-                         <li>
-                              <div class='wow fadeInUp timeline-content' data-wow-delay="0.1s">
-                                   <h4>Lincoln-Sudbury Regional High School</h4>
-                                   <em>
-                                        <span>High School Degree</span>
-                                        <span> | </span>
-                                        <span>2019-2023</span>
-                                        <span> | </span>
-                                        <span> Cumulative GPA: 3.7</span>
-                                   </em>
-                                   <p><b>Awards:</b> Science Exploration Award, AP Scholar Award</p>
-                                   <p><b>AP Classes:</b> Calculus AB, Physics C: Mechanical, Statistics, Spanish, US History</p>
-                                   <p><b>Extracurriculars:</b> Varsity Baseball, Weightlifting, Guitar Performance, 
-                                        Baseball Coaching, PC Building</p>
-                              </div>
-                         </li>
-                    </ul>
-               </div>
+          <div class="pill-row">
+            <b>toolbox</b>
+            <div class="pills">
+              <span class="pill hot">Python</span>
+              <span class="pill hot">Java</span>
+              <span class="pill cool">C</span>
+              <span class="pill cool">JavaScript</span>
+              <span class="pill">Node.js</span>
+              <span class="pill">Shell</span>
+              <span class="pill">Git</span>
+              <span class="pill">LaTeX</span>
+              <span class="pill">Fusion 360</span>
+            </div>
           </div>
-     </section>
+        </div>
+      </div>
 
-     <!-- WORK SECTION -->
-     <section id="work" class="parallax-section">
-          <div class="container">
-               <div class="row">
-                    <div class="wow fadeInUp section-title" data-wow-delay="0.2s">
-                         <h2>My Experience</h2>
-                    </div>
-                    <ul class='timeline'>
-                         <li>
-                              <div class='wow fadeInUp timeline-content' data-wow-delay="0.1s">
-                                   <h4>TBD</h4>
-                                   <em>
-                                        <span>TBD</span>
-                                        <span> | </span>
-                                        <span>TBD</span>
-                                        <span> | </span>
-                                        <span>May 2025 - August 2025</span>
-                                   </em>
-                                   <p>
-                                   <ul style="list-style-type:disc;">
-                                        <li>TBD</li>
-                                   </ul>
-                                   </p>
-                              </div>
-                         </li>
-                    </ul>
-               </div>
+      <div class="edu-item">
+        <div class="edu-year">2019 → 2023</div>
+        <div>
+          <div class="edu-school">Lincoln-Sudbury Regional H.S.<span class="gpa">3.58</span></div>
+          <div class="edu-meta">AP Scholar · Science Exploration Award</div>
+          <div class="pill-row">
+            <b>ap classes</b>
+            <div class="pills">
+              <span class="pill">Calculus AB</span>
+              <span class="pill">Physics C</span>
+              <span class="pill">Statistics</span>
+              <span class="pill">Spanish</span>
+              <span class="pill">US History</span>
+            </div>
           </div>
-     </section> 
-
-     <!-- PROJECT SECTION -->
-     <section id="about" class="parallax-section">
-          <div class="container">
-               <div class="row">
-                    <div class="wow fadeInUp section-title" data-wow-delay="0.2s">
-
-                         <!-- SECTION TITLE -->
-                         <h2>Projects</h2>
-                         <p>Click on any of my projects to learn more about it</p>
-                    </div>
-                    <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
-                         <a target="_blank" href="https://github.com/cameronschase/CyborgCammy">
-                              <div class="service-thumb">
-                                   <i class="fab fa-discord" style="font-size: 45px; padding-left: 15px; padding-bottom: 15px; padding-top: 40px;"></i>
-                                   <h4 class="white-color">CyborgCammy</h4>
-                                   <p>This program lets Discord users add a bot to their server that will aid with moderation and 
-                                        also respond with fun, customizable commands. Built in June 2024.</p>
-                                   <div class="skill-container">
-                                        <button class="skill">
-                                             <h6>JavaScript</h6>
-                                        </button>
-                                   </div>
-                              </div>
-                         </a>
-                    </div>
-                    <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
-                         <a target="_blank" href="https://github.com/cameronschase/cameronschase.github.io">
-                              <div class="service-thumb">
-                                   <i class="fab fa-github" style="font-size: 45px; padding-left: 15px; padding-bottom: 15px; padding-top: 40px;"></i>
-                                   <h4 class="white-color">My Website</h4>
-                                   <p>This is my personal website where you can learn more about me and my journey finding an 
-                                        internship, completing my degree, and doing projects. Built in January 2025.</p>
-                                   <div class="skill-container">
-                                        <button class="skill">
-                                             <h6>HTML</h6>
-                                        </button>
-                                        <button class="skill">
-                                             <h6>CSS</h6>
-                                        </button>
-                                        <button class="skill">
-                                             <h6>JavaScript</h6>
-                                        </button>
-                                   </div>
-                              </div>
-                         </a>
-                    </div>
-               </div>
+          <div class="pill-row">
+            <b>off the clock</b>
+            <div class="pills">
+              <span class="pill">Varsity Baseball</span>
+              <span class="pill">Weightlifting</span>
+              <span class="pill">Guitar</span>
+              <span class="pill">PC Building</span>
+            </div>
           </div>
-     </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-     <!-- EXTRACURRICULAR SECTION -->
-     <section id="service" class="parallax-section">
-          <div class="container">
-               <div class="row">
-                    <div class="wow fadeInUp section-title" data-wow-delay="0.2s">
-                         <h2>My Extracurriculars</h2>
-                    </div>
-                    <div class="row">
-                         <br><br>
-                         <div class="col-md-4 col-sm-8">
-                              <div class="about-image-thumb">
-                                   <img src="images/deischess.png" class="wow fadeInUp img-responsive" data-wow-delay="0.6s"
-                                        alt="about image">
-                              </div>
-                         </div>
-                         <div class="col-md-8 col-sm-12">
-                              <div class="about-thumb">
-                                   <div class="wow fadeInUp section-title" data-wow-delay="0.6s">
-                                        <a target="_blank" href="https://linktr.ee/deis.chess">
-                                             <h2>Deis Chess</h2>
-                                        </a>
-                                        <br>
-                                        <p>Deis Chess is the official Brandeis Chess Club. We have two weekly meetings which promote
-                                             both social and mental growth. All skill levels are welcome to join Deis Chess and 
-                                             attend the meetings and tournaments each semester.</p>
-                                        <p>I am currently the Co-President & Treasuer of Deis Chess where I keep a record of all transactions I make on behalf
-                                             of the club through constant contact with the Student Treasury. I also exhibit impeccable attendance and help create a welcoming 
-                                             environment that promotes learning.</p>
-                                   </div>
-                              </div>
-                         </div>
-                         <br><br>
-                    </div>
-                    <hr>
-                    <div class="row">
-                         <br><br>
-                         <div class="col-md-8 col-sm-12">
-                              <div class="about-thumbblj">
-                                   <div class="wow fadeInUp section-title" data-wow-delay="0.6s">
-                                        <a target="_blank" href="https://brandeislawjournal.wordpress.com/">
-                                             <h2>Brandeis University Law Journal</h2>
-                                        </a>
-                                        <br>
-                                        <p>The Brandeis University Law Journal (BLJ), is a club that bonds over the interpretation 
-                                             of legal precedent and applying it to contemporary issues through seasonal publications. </p>
-                                        <p>This year is my second year as an editor.
-                                        <a target="_blank" href="https://journals.library.brandeis.edu/index.php/blj">
-                                             <h2>Visit Our Publications Archive</h2>
-                                        </a>
-                                   </div>
-                              </div>
-                         </div>
-                         <div class="col-md-4 col-sm-8">
-                              <div class="about-image-thumb">
-                                   <img src="images/blj.jpg" style ="width:20em; height:20em;" class="wow fadeInUp img-responsive" 
-                                   data-wow-delay="0.6s"
-                                        alt="about image">
-                              </div>
-                         </div>
-                         <br><br>
-                    </div>
-                    <hr>
-               </div>
-          </div>
-     </section>
+<!-- ── WORK ── -->
+<section id="work">
+  <span class="decor faint hide-sm" style="top:60px;right:80px;font-size:220px;color:var(--sky-deep);font-family:'JetBrains Mono',monospace">{ }</span>
+  <span class="decor soft hide-sm" style="bottom:80px;left:40px;font-size:90px;color:var(--sky);font-family:'JetBrains Mono',monospace">∞</span>
+  <div class="container">
+    <div class="sec-label">03 · Work</div>
+    <h2 class="sec-title">What I've <em>Done</em> for Money.</h2>
 
-     <!-- CONTACT SECTION -->
-     <section id="contact" class="parallax-section">
-          <div class="container">
-               <div class="row">
-                    <div class="col-md-12 col-sm-12">
-                         <!-- SECTION TITLE -->
-                         <div class="contact-title" data-wow-delay="0.2s">
-                              <h2>Get In Touch:</h2>
-                              <p>If you want to contact me, please fill out this form and I'll respond as soon as I can.</p>
-                         </div>
-                    </div>
-                    <div class="col-md-7 col-sm-10">
-                         <!-- CONTACT FORM HERE -->
-                         <div class="bleh" data-wow-delay="0.4s">
-                              <form target='_blank' id='contact-form' action="https://formsubmit.co/89dd193eaadef74b6f5a1a9c5b00e585"  method='POST'>
-                                   <div id='contact-form-result'></div>
-                                   <div class='row'>
-                                        <div class='col-md-6'>
-                                             <div class='form-group'>
-                                                  <input type='text' class='form-control' placeholder='Full Name'
-                                                       name='name' id='name_field' required>
-                                                  <div class='help-block with-errors'></div>
-                                             </div>
-                                        </div>
-                                        <div class='col-md-6'>
-                                             <div class='form-group'>
-                                                  <input type='email' class='form-control' placeholder='Email'
-                                                       name='email' id='email_field' required>
-                                                  <div class='help-block with-errors'></div>
-                                             </div>
-                                        </div>
-                                   </div>
-                                   <div class='form-group'>
-                                        <input type='text' class='form-control' placeholder='Subject'
-                                             name='subject' id='subject_field' required>
-                                        <div class='help-block with-errors'></div>
-                                   </div>
-                                   <div class='form-group'>
-                                        <textarea class='form-control' placeholder='Your Message' name='message'
-                                             id='message' rows='5' required></textarea>
-                                        <div class='help-block with-errors'></div>
-                                   </div>
-                                   <div class="recaptcha-container">
-                                        <div class="g-recaptcha" data-sitekey="6Lcuxq0qAAAAAIgUWtITKL3QFa4OOsFlQwD1K98I"></div>
-                                   </div>
-                                   <br>
-                                   <script>
-                                        var form = document.getElementById('contact-form');
-                                        form.addEventListener("submit", function (event) {
-                                             if (grecaptcha.getResponse() === '') {
-                                                  event.preventDefault();
-                                                  alert('You must select the reCaptcha before sending your message.');
-                                             }
-                                        }
-                                        , false);
-                                   </script>
-                                   <div class='form-group text-center'>
-                                        <button type='submit' class='btn-custom btn-color'>
-                                             Send Message
-                                        </button>
-                                   </div>
-                              </form>
-                         </div>
-                    </div>
-               </div>
-          </div>
-     </section>
+    <div class="timeline">
+      <div class="edu-item">
+        <div class="edu-year">Summer 2026</div>
+        <div>
+          <div class="edu-school">Internship — TBD</div>
+          <div class="edu-meta">May 2026 → <span class="now">Now</span></div>
+          <p style="color:var(--ink-soft);font-size:15px;margin-top:8px;max-width:520px">
+            This is where my summer role will live. If you're hiring SWE interns in
+            security, infra, or developer tools, my résumé is right above.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-     <!-- FOOTER SECTION -->
-     <footer>
-          <div class="container bottom">
-               <div class="row">
-                    <div class="wow fadeInUp col-md-12 col-sm-12" data-wow-delay="0.4s">
-                         <p>Copyright &copy; 2025 Cameron Chase</p>
-                         <div class="wow fadeInUp" data-wow-delay="0.4s">
-                              <ul class="social-icon" style="text-align: center;">
-                                   <li><a target="_blank" href="https://x.com/CamChase_"
-                                             class="fa fa-times"></a></li>
-                                   <li><a target="_blank" href="https://www.facebook.com/profile.php?id=100092399980099"
-                                             class="fab fa-facebook"></a></li>
-                                   <li><a target="_blank" href="https://www.linkedin.com/in/cameronschase/"
-                                             class="fab fa-linkedin"></a></li>
-                                   <li><a target="_blank" href="https://github.com/cameronschase" class="fab fa-github"></a>
-                                   </li>
-                              </ul>
-                         </div>
-                    </div>
-               </div>
-     </footer>
+<!-- ── PROJECTS ── -->
+<section id="projects">
+  <span class="decor faint hide-sm" style="top:50px;left:40px;font-size:180px;color:var(--sky-deep);font-family:'JetBrains Mono',monospace;letter-spacing:-.04em">&lt;/&gt;</span>
+  <span class="decor soft hide-sm" style="bottom:80px;right:60px;font-size:120px;color:var(--sky);transform:rotate(-6deg)">♜</span>
+  <div class="container">
+    <div class="sec-label">04 · Projects</div>
+    <h2 class="sec-title">Things I've <em>Built</em>.</h2>
 
-     <!-- SCRIPTS -->
-     <script src="js/jquery.js"></script>
-     <script src="js/bootstrap.min.js"></script>
-     <script src="js/jquery.parallax.js"></script>
-     <script src="js/smoothscroll.js"></script>
-     <script src="js/jquery.magnific-popup.min.js"></script>
-     <script src="js/magnific-popup-options.js"></script>
-     <script src="js/wow.min.js"></script>
-     <script src="js/custom.js"></script>
-     <script src="https://www.google.com/recaptcha/api.js" async
-     defer></script>
+    <div class="proj-grid">
+      <a class="proj chess" href="https://github.com/cameronschase/camchess" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="icon lg">♚</div>
+        <h3>Cam Chess</h3>
+        <p>A chess engine that plays optimal moves via Minimax + alpha-beta pruning, wrapped in a clean GUI. My excuse to write a lot of recursion.</p>
+        <div class="tech"><span>Python</span><span>Pygame</span><span>Minimax</span></div>
+      </a>
+
+      <a class="proj" href="https://github.com/cameronschase/CyborgCammy" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" width="42" height="42" fill="currentColor"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.07.07 0 0 0-.075.036c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.075-.036A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.873-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.04.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.331c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.974 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+        </div>
+        <h3>Cyborg Cammy</h3>
+        <p>A Discord bot that handles moderation alongside custom, configurable chat commands. Originally a 2025 weekend project; got a real rewrite in January.</p>
+        <div class="tech"><span>JavaScript</span><span>Node.js</span><span>discord.js</span></div>
+      </a>
+
+      <a class="proj" href="https://github.com/cameronschase/cameronschase.github.io" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" width="42" height="42" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        </div>
+        <h3>this website</h3>
+        <p>The site you're on — hand-built in plain HTML, CSS, and a sprinkle of vanilla JS. No frameworks, no build step, no jQuery. Source is public.</p>
+        <div class="tech"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── EXTRACURRICULARS ── -->
+<section id="extracurriculars">
+  <span class="decor faint hide-sm" style="top:40px;right:60px;font-size:240px;color:var(--sky-deep);transform:rotate(-8deg)">♛</span>
+  <span class="decor soft hide-sm" style="bottom:60px;left:40px;font-size:160px;color:var(--sky-deep);font-family:'Instrument Serif',serif;font-style:italic">𝄞</span>
+  <div class="container">
+    <div class="sec-label">05 · Extracurriculars</div>
+    <h2 class="sec-title">Where Else I Show <em>Up</em>.</h2>
+
+    <div class="ec-grid">
+      <div class="ec">
+        <div class="badge">President</div>
+        <h3><a href="https://linktr.ee/deis.chess" target="_blank">Deis Chess ♛</a></h3>
+        <div class="role">brandeis chess club</div>
+        <p>
+          The official Brandeis Chess Club — two weekly meetings, a monthly tournament,
+          all skill levels welcome.
+        </p>
+        <p>
+          I run the meetings, take attendance, support the rest of the E-Board,
+          and try to keep it a place where someone new can sit down and feel
+          like they belong. Treasurer for two years, Co-President in '25,
+          President ever since.
+        </p>
+      </div>
+
+      <div class="ec">
+        <div class="badge">Editor</div>
+        <h3><a href="https://brandeislawjournal.wordpress.com/" target="_blank">Brandeis Law Journal</a></h3>
+        <div class="role">third year as editor</div>
+        <p>
+          The BLJ is built around interpreting legal precedent and applying it to
+          contemporary issues through seasonal publications.
+        </p>
+        <p>
+          I edit pieces, push them through review, and help keep the publication
+          shipping on time each semester.
+          
+          <a href="https://journals.library.brandeis.edu/index.php/blj" class="inline-link">Browse the Archive</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-wrap">
+      <div class="sec-label">06 · Contact</div>
+      <h2 class="sec-title">Say <em>Hi</em>.</h2>
+      <p>
+        Recruiters, classmates, chess players, fellow skiers — drop me a line.
+        I read every message and respond within a day or two.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:hello@cameronchase.net" class="primary">✉ email</a>
+        <a href="https://www.linkedin.com/in/cameronschase/" target="_blank">linkedin</a>
+        <a href="https://github.com/cameronschase" target="_blank">github</a>
+        <a href="https://x.com/CamChase_" target="_blank">𝕏</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container row">
+    <span>© 2026 Cameron Chase · Built in <span class="col-trick">HTML + CSS</span></span>
+    <span>↑ <a href="#">Top</a></span>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
 </body>
-
 </html>
