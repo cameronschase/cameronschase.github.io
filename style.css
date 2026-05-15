@@ -136,11 +136,31 @@ section{padding:100px 0;position:relative;z-index:1}
   display:flex;align-items:center;
   padding:120px 0 80px;position:relative;
 }
+.hero .container{
+  display:grid;
+  grid-template-columns:1fr 300px;
+  gap:-50px;
+  align-items:center;
+}
+.hero-photo{justify-self:end;align-self:start;width:100%;max-width:300px;margin-top:60px;}
+.hero-photo img{
+  display:block;
+  width:125%;
+  aspect-ratio:3/4;
+  object-fit:cover;
+  border:1.5px solid var(--ink);
+  border-radius:14px;
+  box-shadow:5px 5px 0 var(--sky-deep);
+}
+@media (max-width:780px){
+  .hero .container{grid-template-columns:1fr;gap:0}
+  .hero-photo{display:none}
+}
 .hero .eyebrow{
   font-family:'JetBrains Mono',monospace;
   font-size:13px;letter-spacing:.04em;
   color:var(--muted);
-  margin-bottom:24px;
+  margin-bottom:25px;
   display:flex;align-items:center;gap:10px;
 }
 .hero .eyebrow::before{content:"";width:32px;height:1.5px;background:var(--ink)}
@@ -169,12 +189,15 @@ section{padding:100px 0;position:relative;z-index:1}
 
 /* ─── CURRENTLY widget ──────────────────────────────── */
 .currently{
+  grid-column:1 / -1;
+  justify-self:center;
   margin-top:60px;
   background:var(--paper);
   border:1.5px solid var(--ink);
   border-radius:14px;
   box-shadow:5px 5px 0 var(--sky-deep);
   padding:20px 24px;
+  width:100%;
   max-width:560px;
   font-family:'JetBrains Mono',monospace;
   font-size:13px;
@@ -201,7 +224,7 @@ section{padding:100px 0;position:relative;z-index:1}
 .currently li b::after{content:" ›";color:var(--rust)}
 
 /* ─── ABOUT ─────────────────────────────────────────── */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:180px;align-items:start}
 @media (max-width:780px){.about-grid{grid-template-columns:1fr;gap:30px}}
 .about-grid p{font-size:19px;line-height:1.55;color:var(--ink-soft);margin-bottom:18px}
 .about-grid p strong{color:var(--ink);background:linear-gradient(transparent 60%,var(--rust-soft) 60%);padding:0 2px}
