@@ -347,7 +347,6 @@ section{padding:100px 0;position:relative;z-index:1}
 .contact-links a.primary:hover{background:var(--paper);color:var(--ink);border-color:var(--paper)}
 
 .contact-wrap::before{
-  content:"hello";
   position:absolute;bottom:-60px;right:-40px;
   font-family:'Instrument Serif',serif;font-style:italic;
   font-size:300px;color:rgba(255,255,255,0.05);
