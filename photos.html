@@ -4,244 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cameron Chase's Photos</title>
-<meta name="description" content="A scrapbook of recent moments — chess, skiing, music, code, and campus life.">
+<meta name="description" content="A scrapbook of recent moments — chess, skiing, music, math, and campus life.">
 <meta name="author" content="Cameron Chase">
 <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --cream:#F4EEE2;
-    --cream-2:#EAE2D2;
-    --ink:#1A1A1A;
-    --ink-soft:#3a3a3a;
-    --muted:#7a7368;
-    --rust:#2D5D85;
-    --rust-soft:#7AB5D8;
-    --sky:#A8D2E8;
-    --sky-soft:#D6EAF4;
-    --sky-deep:#4A8FB5;
-    --paper:#FFFBF2;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    background:var(--cream);
-    color:var(--ink);
-    font-family:'Inter',system-ui,-apple-system,sans-serif;
-    font-size:17px;line-height:1.55;
-    overflow-x:hidden;min-height:100vh;
-  }
-  body::before{
-    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
-    background-image:radial-gradient(rgba(0,0,0,0.04) 1px,transparent 1px);
-    background-size:3px 3px;mix-blend-mode:multiply;
-  }
-  .container{max-width:1200px;margin:0 auto;padding:0 32px;position:relative;z-index:1}
-
-  /* ── NAV (matches home) ── */
-  nav{
-    position:fixed;top:24px;right:32px;z-index:50;
-    display:flex;gap:6px;align-items:center;
-    background:var(--paper);
-    border:1.5px solid var(--ink);
-    border-radius:999px;
-    padding:6px 8px;
-    box-shadow:3px 3px 0 var(--ink);
-    font-family:'JetBrains Mono',monospace;
-    font-size:12px;font-weight:500;
-  }
-  nav a{
-    color:var(--ink);text-decoration:none;
-    padding:6px 12px;border-radius:999px;
-    transition:background .15s,color .15s;
-  }
-  nav a:hover{background:var(--cream-2)}
-  nav a.active{background:var(--sky);color:var(--ink)}
-  nav a.cta{background:var(--ink);color:var(--cream)}
-  nav a.cta:hover{background:var(--rust);color:var(--paper)}
-  @media (max-width:600px){
-    nav{padding:4px 6px;font-size:11px}
-    nav a{padding:6px 10px}
-    nav a.hide-sm{display:none}
-  }
-
-  /* ── HERO ── */
-  .hero{
-    padding:140px 0 40px;position:relative;
-  }
-  .crumb{
-    font-family:'JetBrains Mono',monospace;font-size:13px;
-    color:var(--muted);margin-bottom:24px;
-    display:flex;align-items:center;gap:10px;
-  }
-  .crumb::before{content:"";width:32px;height:1.5px;background:var(--ink)}
-  .crumb a{color:var(--muted);text-decoration:none;border-bottom:1px dashed var(--muted)}
-  .crumb a:hover{color:var(--rust);border-color:var(--rust)}
-
-  h1.title{
-    font-family:'Instrument Serif',serif;font-weight:400;
-    font-size:clamp(64px,12vw,160px);line-height:.92;
-    letter-spacing:-.02em;margin-bottom:24px;
-  }
-  h1.title em{font-style:italic;color:var(--rust)}
-  h1.title .blue{color:var(--sky-deep);font-style:italic}
-
-  .lede{
-    font-size:19px;color:var(--ink-soft);
-    max-width:600px;margin-bottom:40px;line-height:1.55;
-  }
-  .lede em{color:var(--rust);font-style:normal;font-weight:600}
-
-  /* hand-drawn underline under "scrapbook" */
-  .squiggle{
-    position:absolute;width:280px;height:14px;color:var(--sky-deep);
-    margin-top:-4px;display:block;opacity:.85;
-  }
-
-  /* ── FILTERS ── */
-  .filters{
-    display:flex;flex-wrap:wrap;gap:8px;
-    padding:16px 0 60px;
-    border-top:1px dashed var(--ink);
-    margin-top:30px;padding-top:24px;
-    align-items:center;
-  }
-  .filters .lbl{
-    font-family:'JetBrains Mono',monospace;font-size:11px;
-    color:var(--muted);text-transform:uppercase;letter-spacing:.08em;
-    margin-right:12px;
-  }
-  .filter{
-    font-family:'JetBrains Mono',monospace;font-size:13px;
-    background:var(--paper);border:1.5px solid var(--ink);
-    padding:7px 14px;border-radius:999px;
-    cursor:pointer;color:var(--ink);
-    transition:background .15s,color .15s,transform .1s;
-  }
-  .filter:hover{background:var(--cream-2)}
-  .filter.active{background:var(--ink);color:var(--cream)}
-  .filter[data-cat="chess"].active{background:var(--rust);border-color:var(--rust);color:var(--paper)}
-  .filter[data-cat="ski"].active{background:var(--sky-deep);border-color:var(--sky-deep);color:var(--paper)}
-  .filter[data-cat="music"].active{background:#6B4FAA;border-color:#6B4FAA;color:var(--paper)}
-  .filter[data-cat="code"].active{background:#1F4538;border-color:#1F4538;color:var(--paper)}
-  .filter[data-cat="campus"].active{background:#A8895A;border-color:#A8895A;color:var(--paper)}
-
-  /* ── GALLERY ── */
-  .gallery{
-    column-count:4;column-gap:24px;
-    padding:0 0 80px;
-  }
-  @media (max-width:1100px){.gallery{column-count:3}}
-  @media (max-width:780px){.gallery{column-count:2}}
-  @media (max-width:520px){.gallery{column-count:1}}
-
-  .polaroid{
-    background:var(--paper);
-    padding:14px 14px 40px;
-    border:1px solid rgba(0,0,0,.1);
-    box-shadow:0 8px 24px rgba(0,0,0,.12);
-    margin:0 0 24px;
-    break-inside:avoid;
-    position:relative;
-    cursor:zoom-in;
-    transition:transform .25s,box-shadow .25s,opacity .25s;
-    display:inline-block;width:100%;
-  }
-  .polaroid:nth-child(3n+1){transform:rotate(-1.5deg)}
-  .polaroid:nth-child(3n+2){transform:rotate(1.2deg)}
-  .polaroid:nth-child(5n+3){transform:rotate(-2.4deg)}
-  .polaroid:nth-child(7n+4){transform:rotate(2deg)}
-  .polaroid:hover{transform:scale(1.04) rotate(0deg)!important;z-index:5;box-shadow:0 16px 40px rgba(0,0,0,.22)}
-
-  .polaroid .ph{
-    width:100%;display:flex;align-items:center;justify-content:center;
-    color:var(--paper);
-    font-family:'JetBrains Mono',monospace;font-size:12px;
-    text-align:center;padding:14px;border-radius:2px;
-  }
-  /* placeholder gradients per category */
-  .polaroid[data-cat="chess"] .ph{background:linear-gradient(135deg,#1a1a1a,#3a3a3a);}
-  .polaroid[data-cat="ski"] .ph{background:linear-gradient(135deg,var(--sky-deep),var(--sky));color:var(--ink)}
-  .polaroid[data-cat="music"] .ph{background:linear-gradient(135deg,#6B4FAA,#4A3577);}
-  .polaroid[data-cat="code"] .ph{background:linear-gradient(135deg,#1F4538,#2c6450);}
-  .polaroid[data-cat="campus"] .ph{background:linear-gradient(135deg,#D4B888,#A8895A);color:var(--ink)}
-
-  /* aspect ratios mixed for variety */
-  .polaroid.tall .ph{aspect-ratio:3/4}
-  .polaroid.square .ph{aspect-ratio:1/1}
-  .polaroid.wide .ph{aspect-ratio:4/3}
-
-  .polaroid .caption{
-    font-family:'Instrument Serif',serif;font-style:italic;
-    font-size:15px;text-align:center;margin-top:10px;color:var(--ink-soft);
-  }
-  .polaroid .meta{
-    font-family:'JetBrains Mono',monospace;font-size:10px;
-    color:var(--muted);text-align:center;margin-top:2px;
-    text-transform:uppercase;letter-spacing:.08em;
-  }
-  .polaroid.hidden{display:none}
-
-  /* ── LIGHTBOX ── */
-  .lightbox{
-    position:fixed;inset:0;background:rgba(20,20,20,.85);
-    display:none;align-items:center;justify-content:center;
-    z-index:100;padding:40px;cursor:zoom-out;
-    backdrop-filter:blur(6px);
-  }
-  .lightbox.show{display:flex}
-  .lightbox .frame{
-    background:var(--paper);
-    padding:24px 24px 60px;
-    max-width:680px;width:100%;
-    box-shadow:0 24px 80px rgba(0,0,0,.5);
-    transform:rotate(-1deg);
-    animation:pop .25s ease-out;
-  }
-  @keyframes pop{from{transform:rotate(-3deg) scale(.8);opacity:0}to{transform:rotate(-1deg) scale(1);opacity:1}}
-  .lightbox .ph{
-    width:100%;aspect-ratio:4/3;
-    display:flex;align-items:center;justify-content:center;
-    color:var(--paper);font-family:'JetBrains Mono',monospace;
-    font-size:14px;text-align:center;
-  }
-  .lightbox .caption{
-    font-family:'Instrument Serif',serif;font-style:italic;
-    font-size:22px;text-align:center;margin-top:18px;color:var(--ink);
-  }
-  .lightbox .close{
-    position:fixed;top:24px;right:32px;
-    background:var(--paper);color:var(--ink);
-    border:1.5px solid var(--ink);border-radius:999px;
-    width:44px;height:44px;display:flex;align-items:center;justify-content:center;
-    cursor:pointer;font-size:18px;
-  }
-
-  /* ── EMPTY STATE ── */
-  .empty{
-    text-align:center;padding:80px 20px;color:var(--muted);
-    font-family:'JetBrains Mono',monospace;font-size:14px;
-    display:none;
-  }
-  .empty.show{display:block}
-
-  /* ── FOOTER ── */
-  footer{
-    padding:40px 0 60px;
-    font-family:'JetBrains Mono',monospace;
-    font-size:12px;color:var(--muted);
-  }
-  footer .row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}
-  footer a{color:var(--ink);text-decoration:none;border-bottom:1px dashed var(--ink)}
-  footer a:hover{color:var(--rust);border-color:var(--rust)}
-</style>
+<link rel="stylesheet" href="photos.css">
 </head>
 <body>
 
 <nav>
-  <a href="index.html" class="hide-sm">← Home</a>
+  <a href="index.html" class="hide-sm">&larr; Home</a>
   <a href="#about" class="hide-sm">About</a>
   <a href="#work" class="hide-sm">Work</a>
   <a href="#projects">Projects</a>
@@ -253,154 +27,147 @@
   <div class="container">
     <div class="crumb"><a href="index.html">Home</a> / Photos</div>
     <h1 class="title">
-      The <em>scrapbook</em>
+      The <em>scrapbook</em>.
     </h1>
     <p class="lede">
       Loose collection of <em>recent moments</em> — chess wins, ski days,
-      late-night coding, the occasional guitar, and whatever else doesn't fit
+      the occasional guitar, math at the board, and whatever else doesn't fit
       back on the home page. Click any photo to see it bigger.
     </p>
 
     <div class="filters">
       <span class="lbl">Filter ></span>
       <button class="filter active" data-cat="all">All</button>
-      <button class="filter" data-cat="chess">♛ Chess</button>
-      <button class="filter" data-cat="ski">⛷ Skiing</button>
-      <button class="filter" data-cat="music">♪ Music</button>
-      <button class="filter" data-cat="code">{ } Code</button>
-      <button class="filter" data-cat="campus">⌂ Campus</button>
+      <button class="filter" data-cat="chess">&#9819; Chess</button>
+      <button class="filter" data-cat="ski">&#9975; Skiing</button>
+      <button class="filter" data-cat="music">&#9834; Music</button>
+      <button class="filter" data-cat="math">&sum; Math</button>
+      <button class="filter" data-cat="campus">&#8962; Campus</button>
     </div>
   </div>
 </header>
 
 <div class="container">
   <div class="gallery" id="gallery">
-    <!-- placeholder polaroids — swap .ph divs for <img src="..."> when you have real photos -->
     <figure class="polaroid square" data-cat="chess">
-      <div class="ph">photo 01<br>chess club</div>
-      <div class="caption">deis chess tourney</div>
-      <div class="meta">brandeis · spring '26</div>
+      <img class="ph" src="images/Chess 1.webp" alt="Chess tournament" loading="lazy">
+      <div class="caption">Focusing</div>
+      <div class="meta">Chess Club &middot; '25</div>
     </figure>
     <figure class="polaroid tall" data-cat="ski">
-      <div class="ph">photo 02<br>first chair</div>
-      <div class="caption">sugarloaf, dawn patrol</div>
-      <div class="meta">maine · feb '26</div>
+      <img class="ph" src="images/Ski 1.webp" alt="Skiing" loading="lazy">
+      <div class="caption">Vacation Skiing</div>
+      <div class="meta">Loon Mountain &middot; '26</div>
     </figure>
     <figure class="polaroid wide" data-cat="campus">
-      <div class="ph">photo 03<br>BLJ launch</div>
-      <div class="caption">law journal release party</div>
-      <div class="meta">brandeis · '25</div>
+      <img class="ph" src="images/Trivia 1.webp" alt="Trivia Night" loading="lazy">
+      <div class="caption">Trivia Night Win</div>
+      <div class="meta">Thursday Trivia · '26</div>
     </figure>
     <figure class="polaroid square" data-cat="music">
-      <div class="ph">photo 04<br>strat in the dorm</div>
-      <div class="caption">3am noodling</div>
-      <div class="meta">waltham · '26</div>
+      <img class="ph" src="images/Guitar 1.webp" alt="Guitar" loading="lazy">
+      <div class="caption">Summer Guitarist</div>
+      <div class="meta">Brandeis · '25</div>
     </figure>
-    <figure class="polaroid tall" data-cat="code">
-      <div class="ph">photo 05<br>terminal glow</div>
-      <div class="caption">debugging Cam Chess</div>
-      <div class="meta">'26</div>
+    <figure class="polaroid square">
+      <img class="ph" src="images/Summer 2.webp" alt="Ice Cream" loading="lazy">
+      <div class="caption">Cooling Off</div>
+      <div class="meta">Burlington · '25</div>
     </figure>
-    <figure class="polaroid wide" data-cat="ski">
-      <div class="ph">photo 06<br>summit shot</div>
-      <div class="caption">whiteface</div>
-      <div class="meta">NY · '26</div>
+    <figure class="polaroid tall" data-cat="math">
+      <img class="ph" src="images/Math 1.webp" alt="Math at the board" loading="lazy">
+      <div class="caption">&pi;&mu;&epsilon; Induction Ceremony</div>
+      <div class="meta">Brandeis · '26</div>
+    </figure>
+    <figure class="polaroid tall" data-cat="ski">
+      <img class="ph" src="images/Ski 2.webp" alt="Skiing" loading="lazy">
+      <div class="caption">First Chair</div>
+      <div class="meta">Loon Mountain &middot; '26</div>
     </figure>
     <figure class="polaroid square" data-cat="chess">
-      <div class="ph">photo 07<br>eboard meeting</div>
-      <div class="caption">agenda night</div>
-      <div class="meta">brandeis · '26</div>
+      <img class="ph" src="images/Chess 2.webp" alt="Chess" loading="lazy">
+      <div class="caption">Family Weekend</div>
+      <div class="meta">Brandeis · '25</div>
     </figure>
-    <figure class="polaroid wide" data-cat="campus">
-      <div class="ph">photo 08<br>commencement square</div>
-      <div class="caption">campus golden hour</div>
-      <div class="meta">brandeis · '25</div>
-    </figure>
-    <figure class="polaroid tall" data-cat="music">
-      <div class="ph">photo 09<br>amp + cable</div>
-      <div class="caption">rig of the week</div>
-      <div class="meta">'26</div>
-    </figure>
-    <figure class="polaroid square" data-cat="code">
-      <div class="ph">photo 10<br>hackathon</div>
-      <div class="caption">hours 22 of 24</div>
-      <div class="meta">'25</div>
+    <figure class="polaroid wide">
+      <img class="ph" src="images/Hike 1.webp" alt="Hike" loading="lazy">
+      <div class="caption">Hiking</div>
+      <div class="meta">Mount Monadnock &middot; '25</div>
     </figure>
     <figure class="polaroid wide" data-cat="ski">
-      <div class="ph">photo 11<br>parking lot beer</div>
-      <div class="caption">après · sunday river</div>
-      <div class="meta">maine · '26</div>
+      <img class="ph" src="images/Ski 8.webp" alt="Skiing" loading="lazy">
+      <div class="caption">First Day of the Season</div>
+      <div class="meta">Stowe Mountain &middot; '24</div>
     </figure>
-    <figure class="polaroid tall" data-cat="campus">
-      <div class="ph">photo 12<br>library 4F</div>
-      <div class="caption">finals week</div>
-      <div class="meta">brandeis · '25</div>
+    <figure class="polaroid tall" data-cat="ski">
+      <img class="ph" src="images/Ski 3.webp" alt="Skiing" loading="lazy">
+      <div class="caption">Powder Day</div>
+      <div class="meta">Mt. Sunapee &middot; '25</div>
+    </figure>
+    <figure class="polaroid square" data-cat="chess">
+      <img class="ph" src="images/Chess 3.webp" alt="Chess" loading="lazy">
+      <div class="caption">Picturesque</div>
+      <div class="meta">Chess Club &middot; '25</div>
+    </figure>
+    <figure class="polaroid square" data-cat="chess">
+      <img class="ph" src="images/Chess 4.webp" alt="Chess" loading="lazy">
+      <div class="caption">Tournament Placings</div>
+      <div class="meta">Boston College &middot; '25</div>
+    </figure>
+    <figure class="polaroid square" data-cat="campus">
+      <img class="ph" src="images/Pool 1.webp" alt="pool" loading="lazy">
+      <div class="caption">Hitting the Billiards</div>
+      <div class="meta">Brandeis &middot; '24</div>
+    </figure>
+    <figure class="polaroid tall" data-cat="ski">
+      <img class="ph" src="images/Ski 4.webp" alt="Skiing" loading="lazy">
+      <div class="caption">Spring Fun</div>
+      <div class="meta">Wachusett Mountain &middot; '24</div>
+    </figure>
+    <figure class="polaroid tall" data-cat="ski">
+      <img class="ph" src="images/Ski 5.webp" alt="Skiing" loading="lazy">
+      <div class="caption">Two Roads Diverged in a Wood</div>
+      <div class="meta">Crotched Mountain &middot; '25</div>
+    </figure>
+    <figure class="polaroid square" data-cat="ski">
+      <img class="ph" src="images/Ski 6.webp" alt="Skiing" loading="lazy">
+      <div class="caption">Peak</div>
+      <div class="meta">Loon Mountain &middot; '26</div>
+    </figure>
+    <figure class="polaroid wide" data-cat="ski">
+      <img class="ph" src="images/Ski 7.webp" alt="Skiing" loading="lazy">
+      <div class="caption">Après Shenanigans</div>
+      <div class="meta">Pat's Peak &middot; '25</div>
+    </figure>
+    <figure class="polaroid tall">
+      <img class="ph" src="images/Summer 1.webp" alt="Summer" loading="lazy">
+      <div class="caption">Summer</div>
+      <div class="meta">Chestnut Hill &middot; '25</div>
+    </figure>
+    <figure class="polaroid square" data-cat="ski">
+      <img class="ph" src="images/Ski 9.webp" alt="Skiing" loading="lazy">
+      <div class="caption">Glades</div>
+      <div class="meta">Mount Sunapee &middot; '26</div>
     </figure>
   </div>
-
   <div class="empty" id="empty">no photos in this filter — yet.</div>
 </div>
 
 <div class="lightbox" id="lightbox">
   <div class="frame" id="frame">
-    <div class="ph" id="lb-ph"></div>
+    <img class="ph" id="lb-ph" alt="">
     <div class="caption" id="lb-cap"></div>
   </div>
-  <div class="close" id="close">×</div>
+  <div class="close" id="close">&times;</div>
 </div>
 
 <footer>
   <div class="container row">
-    <span>© 2026 Cameron Chase · <a href="index.html">Home</a></span>
+    <span>&copy; 2026 Cameron Chase · <a href="index.html">Home</a></span>
     <span><a href="https://github.com/cameronschase">GitHub</a> · <a href="https://www.linkedin.com/in/cameronschase/">LinkedIn</a></span>
   </div>
 </footer>
 
-<script>
-  // ── Filter ──
-  const filters = document.querySelectorAll('.filter');
-  const items = document.querySelectorAll('.polaroid');
-  const empty = document.getElementById('empty');
-
-  filters.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filters.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const cat = btn.dataset.cat;
-      let visible = 0;
-      items.forEach(it => {
-        const show = (cat === 'all' || it.dataset.cat === cat);
-        it.classList.toggle('hidden', !show);
-        if (show) visible++;
-      });
-      empty.classList.toggle('show', visible === 0);
-    });
-  });
-
-  // ── Lightbox ──
-  const lb   = document.getElementById('lightbox');
-  const lbPh = document.getElementById('lb-ph');
-  const lbCap= document.getElementById('lb-cap');
-  const close= document.getElementById('close');
-
-  items.forEach(it => {
-    it.addEventListener('click', () => {
-      const ph  = it.querySelector('.ph');
-      const cap = it.querySelector('.caption').textContent;
-      const cat = it.dataset.cat;
-      // copy the placeholder visual into the lightbox
-      lbPh.innerHTML = ph.innerHTML;
-      lbPh.style.background = getComputedStyle(ph).background;
-      lbPh.style.color      = getComputedStyle(ph).color;
-      lbCap.textContent = cap;
-      lb.classList.add('show');
-    });
-  });
-
-  function closeLb(){ lb.classList.remove('show'); }
-  lb.addEventListener('click', closeLb);
-  close.addEventListener('click', closeLb);
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
-</script>
+<script src="photos.js"></script>
 </body>
 </html>
