@@ -93,12 +93,6 @@ section{padding:100px 0;position:relative;z-index:1}
   max-width:1100px;margin:0 auto;padding:0 32px;
   pointer-events:none;user-select:none;
 }
-.sec-divider::before,
-.sec-divider::after{
-  content:"";flex:1;max-width:260px;height:1px;
-  background:linear-gradient(to right,transparent,var(--muted) 40%,var(--muted) 60%,transparent);
-  opacity:.4;
-}
 .sec-divider .sym{
   font-family:'Instrument Serif',serif;font-style:italic;
   font-size:28px;color:var(--sky-deep);opacity:.7;
@@ -112,7 +106,6 @@ section{padding:100px 0;position:relative;z-index:1}
 @media (max-width:780px){
   .sec-divider .sym{font-size:22px}
   .sec-divider .op{font-size:18px}
-  .sec-divider::before,.sec-divider::after{max-width:80px}
 }
 
 /* ─── BACKGROUND DECOR (chess, math, music, ski) ───── */
