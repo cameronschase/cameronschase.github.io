@@ -288,7 +288,7 @@ section{padding:100px 0;position:relative;z-index:1}
   box-shadow:4px 4px 0 var(--sky-deep);
   display:block;
 }
-.work-logo{height:200px;object-fit:cover}
+.work-logo{height:200px;object-fit:cover;margin-top:40px}
 .work-photo{height:200px;object-fit:cover;margin-top:40px}
 @media (max-width:780px){
   .work-logo{max-width:140px}
