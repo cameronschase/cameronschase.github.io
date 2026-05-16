@@ -267,6 +267,34 @@ section{padding:100px 0;position:relative;z-index:1}
 }
 .edu-meta{color:var(--muted);font-size:14px;margin-bottom:18px;font-family:'JetBrains Mono',monospace}
 
+#work .edu-item{
+  grid-template-columns:200px 1fr 300px;
+  gap:32px;
+  align-items:start;
+}
+#work .edu-school{line-height:1.15}
+#work .edu-school .sub{font-size:22px;color:var(--ink-soft)}
+#work .edu-year{display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+@media (max-width:780px){
+  #work .edu-item{grid-template-columns:1fr;gap:18px}
+}
+
+.work-logo,
+.work-photo{
+  width:100%;
+  background:var(--paper);
+  border:1.5px solid var(--ink);
+  border-radius:12px;
+  box-shadow:4px 4px 0 var(--sky-deep);
+  display:block;
+}
+.work-logo{height:200px;object-fit:cover}
+.work-photo{height:200px;object-fit:cover;margin-top:40px}
+@media (max-width:780px){
+  .work-logo{max-width:140px}
+  .work-photo{margin-top:0;max-width:360px}
+}
+
 .pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
 .pill{
   font-family:'JetBrains Mono',monospace;font-size:12px;
