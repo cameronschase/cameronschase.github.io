@@ -7,6 +7,20 @@
 
 (() => {
 
+  /* ─── ALL PAGES: light/dark theme toggle ────────────
+     The initial theme is set by an inline <head> script
+     (before paint) to avoid a flash. This just flips it
+     and remembers the choice. */
+  const themeToggle = document.getElementById('themeToggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      const next = isDark ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+  }
+
   /* ─── HOME: knight cursor companion ─────────────────
      Floating ♞ that follows your cursor while hovering
      anything chess-related. */

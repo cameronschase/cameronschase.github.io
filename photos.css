@@ -11,6 +11,19 @@
   --sky-deep:#4A8FB5;
   --paper:#FFFBF2;
 }
+[data-theme="dark"]{
+  --cream:#15171B;
+  --cream-2:#262B31;
+  --ink:#ECE6DA;
+  --ink-soft:#C6C0B5;
+  --muted:#928C80;
+  --rust:#5BA3D6;
+  --rust-soft:#7AB5D8;
+  --sky:#A8D2E8;
+  --sky-soft:#2A3742;
+  --sky-deep:#6BB3D8;
+  --paper:#1C2026;
+}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
@@ -19,11 +32,16 @@ body{
   font-family:'Inter',system-ui,-apple-system,sans-serif;
   font-size:17px;line-height:1.55;
   overflow-x:hidden;min-height:100vh;
+  transition:background .3s ease,color .3s ease;
 }
 body::before{
   content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
   background-image:radial-gradient(rgba(0,0,0,0.04) 1px,transparent 1px);
   background-size:3px 3px;mix-blend-mode:multiply;
+}
+[data-theme="dark"] body::before{
+  background-image:radial-gradient(rgba(255,255,255,0.022) 1px,transparent 1px);
+  mix-blend-mode:screen;
 }
 .container{max-width:1200px;margin:0 auto;padding:0 32px;position:relative;z-index:1}
 
@@ -48,6 +66,31 @@ nav a:hover{background:var(--cream-2)}
 nav a.active{background:var(--sky);color:var(--ink)}
 nav a.cta{background:var(--ink);color:var(--cream)}
 nav a.cta:hover{background:var(--rust);color:var(--paper)}
+
+/* theme toggle slider */
+.theme-toggle{
+  appearance:none;-webkit-appearance:none;
+  flex:none;cursor:pointer;
+  position:relative;
+  width:52px;height:26px;padding:0;margin-left:2px;
+  border:1.5px solid var(--ink);
+  border-radius:999px;
+  background:var(--cream-2);
+  transition:background .2s;
+}
+.theme-toggle .knob{
+  position:absolute;top:50%;left:3px;
+  transform:translateY(-50%);
+  width:18px;height:18px;border-radius:50%;
+  background:var(--ink);
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;line-height:1;color:var(--paper);
+  transition:left .22s ease,background .2s;
+}
+.theme-toggle .knob::after{content:"\2600"}            /* ☀ */
+[data-theme="dark"] .theme-toggle .knob{left:31px}
+[data-theme="dark"] .theme-toggle .knob::after{content:"\263E"} /* ☾ */
+
 @media (max-width:600px){
   nav{padding:4px 6px;font-size:11px}
   nav a{padding:6px 10px}

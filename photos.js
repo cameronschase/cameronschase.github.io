@@ -1,3 +1,14 @@
+// ── Theme toggle (initial theme set by inline <head> script) ──
+const themeToggle = document.getElementById('themeToggle');
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const next = isDark ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+}
+
 // ── Filter ──
 const filters = document.querySelectorAll('.filter');
 const items = document.querySelectorAll('.polaroid');
