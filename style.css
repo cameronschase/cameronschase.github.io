@@ -419,6 +419,46 @@ section{padding:100px 0;position:relative;z-index:1}
   transform:rotate(3deg);
 }
 
+/* ─── GOALS (goals.log checklist) ───────────────────── */
+.goals-log{
+  max-width:720px;margin:0 auto;
+  background:var(--paper);
+  border:1.5px solid var(--ink);
+  border-radius:14px;
+  box-shadow:5px 5px 0 var(--sky-deep);
+  padding:20px 26px;
+  font-family:'JetBrains Mono',monospace;
+  font-size:13px;
+}
+.goals-log .head{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-bottom:8px;padding-bottom:12px;
+  border-bottom:1px dashed var(--ink);
+  color:var(--muted);font-size:11px;letter-spacing:.08em;
+}
+.goals-log .head .track{color:var(--rust);font-weight:600}
+.goals-log ul{list-style:none}
+.goals-log li{
+  display:flex;align-items:center;gap:14px;
+  padding:12px 0;font-size:14px;color:var(--ink-soft);
+  border-bottom:1px solid var(--cream-2);
+}
+.goals-log li:last-child{border-bottom:none}
+.goals-log .box{
+  flex:none;width:18px;height:18px;
+  border:1.5px solid var(--ink);border-radius:4px;
+  background:var(--paper);
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;line-height:1;color:var(--paper);
+}
+.goals-log li.done .box{background:var(--rust);border-color:var(--rust)}
+.goals-log li.done .box::after{content:"\2713"}        /* ✓ */
+.goals-log li.wip .box{background:var(--sky);border-color:var(--sky-deep);color:var(--ink)}
+.goals-log li.wip .box::after{content:"~"}
+.goals-log li .txt{flex:1}
+.goals-log li.done .txt{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--muted)}
+.goals-log li .when{flex:none;color:var(--muted);font-size:11px;letter-spacing:.04em}
+
 /* ─── CONTACT ───────────────────────────────────────── */
 .contact-wrap{
   background:var(--ink);color:var(--cream);
