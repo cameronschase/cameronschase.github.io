@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research · Cameron Chase</title>
+<meta name="description" content="Cameron Chase's research — undergraduate work in web and network security at the Securitas eX Machina Cybersecurity Research Lab, Brandeis University.">
+<meta name="author" content="Cameron Chase">
+<link rel="canonical" href="https://cameronchase.net/research.html">
+
+<!-- Cards for querying -->
+<meta property="og:title" content="Research · Cameron Chase">
+<meta property="og:description" content="Undergraduate research in web & network security at the Securitas eX Machina Cybersecurity Research Lab, Brandeis University.">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://cameronchase.net/research.html">
+<meta property="og:site_name" content="Cameron Chase">
+<meta property="og:image" content="https://cameronchase.net/images/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="1200">
+<meta property="og:image:alt" content="Cameron Chase">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Research · Cameron Chase">
+<meta name="twitter:description" content="Undergraduate research in web & network security at Brandeis University.">
+<meta name="twitter:image" content="https://cameronchase.net/images/og.jpg">
+
+<link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* compact interior-page header (no full homepage hero) */
+  .research-page .hero{padding:140px 0 50px;min-height:0;display:block}
+  .research-page .hero .container{display:block;max-width:1100px}
+  .research-page .hero .tagline{max-width:680px}
+
+  /* position section: logo | text | photo inline, matching the homepage Work layout */
+  #position .edu-item{grid-template-columns:200px 1fr 300px;gap:32px;align-items:start}
+  #position .edu-school{line-height:1.15}
+  #position .edu-school .sub{font-size:22px;color:var(--ink-soft)}
+  #position .edu-year{display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+  @media (max-width:780px){#position .edu-item{grid-template-columns:1fr;gap:18px}}
+
+  /* lab-link pills shouldn't look like default blue links */
+  .research-page a.pill{color:var(--ink);text-decoration:none}
+  .research-page a.pill:hover{background:var(--sky);border-color:var(--sky-deep)}
+</style>
+<script>
+  (function(){
+    var t = localStorage.getItem('theme');
+    if(!t){ t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+    document.documentElement.setAttribute('data-theme', t);
+  })();
+</script>
+</head>
+<body class="research-page">
+
+<!-- floating knight that appears on chess hover (shared script; stays hidden here) -->
+<div class="knight" id="knight">&#9822;</div>
+
+<nav>
+  <a href="index.html" class="hide-sm">&larr; Home</a>
+  <a href="index.html#about" class="hide-sm">About</a>
+  <a href="index.html#work" class="hide-sm">Work</a>
+  <a href="index.html#projects">Projects</a>
+  <a href="index.html#goals">Future</a>
+  <a href="research.html" class="active">Research</a>
+  <a href="photos.html" class="hide-sm">Photos</a>
+  <a href="index.html#contact" class="cta">Contact Me</a>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode" title="Toggle light/dark mode"><span class="knob"></span></button>
+</nav>
+
+<!-- ── HERO ── -->
+<header class="hero">
+  <span class="decor faint hide-sm" style="top:90px;right:60px;font-size:150px;color:var(--sky-deep);font-style:italic">&part;</span>
+  <span class="decor soft hide-sm" style="bottom:40px;right:180px;font-size:54px;color:var(--sky-deep);font-family:'JetBrains Mono',monospace">&lt;/&gt;</span>
+  <div class="container">
+    <div class="eyebrow">Securitas eX Machina Lab · Brandeis University · Web &amp; Network Security</div>
+    <h1>My <span class="italic">Research</span>.</h1>
+    <p class="tagline">
+      I study how the modern web and the networks beneath it can be <em>attacked</em> — and how to make them
+      <em>safer</em>. My work centers on web and network security: evaluating real-world systems, finding where they break,
+      and building defenses that can mitigate common and even novel attack vectors.
+    </p>
+  </div>
+</header>
+
+<div class="sec-divider" aria-hidden="true">
+  <span class="sym">&nabla; &middot; F</span>
+</div>
+
+<!-- ── FOCUS ── -->
+<section id="focus">
+  <span class="decor faint hide-sm" style="top:-60px;left:40px;font-size:150px;color:var(--sky-deep);font-family:'JetBrains Mono',monospace">{ }</span>
+  <div class="container">
+    <div class="sec-label">01 · Focus</div>
+    <h2 class="sec-title">What I <em>Work</em> On.</h2>
+
+    <div class="about-grid">
+      <div>
+        <p>
+          My research sits at the intersection of <strong>cybersecurity</strong> and the
+          <strong class="cool">systems</strong> that run the internet. I'm drawn to problems where careful
+          evaluation reveals something surprising about how deployed systems actually behave under real conditions.
+        </p>
+        <p>
+          Right now I'm focused on <strong>web security</strong> and <strong>network security</strong> —
+          studying browsers, protocols, and the trust assumptions baked into everyday infrastructure. I bring an
+          applied math background to the work, which shapes how I think about modeling threats and reasoning about
+          guarantees.
+        </p>
+      </div>
+      <div class="about-side">
+        <div class="pill-row">
+          <b>Areas of Interest</b>
+          <div class="pills">
+            <span class="pill">Web Security</span>
+            <span class="pill">Network Security</span>
+            <span class="pill">Browser Security &amp; Fingerprinting</span>
+            <span class="pill">Privacy &amp; PII Leakage</span>
+            <span class="pill">Applied Cryptography</span>
+            <span class="pill">Systems Security</span>
+            <span class="pill">Applied Machine Learning</span>
+          </div>
+        </div>
+        <div class="pill-row">
+          <b>Methods &amp; Tools</b>
+          <div class="pills">
+            <span class="pill">Python</span>
+            <span class="pill">C</span>
+            <span class="pill">JavaScript</span>
+            <span class="pill">Shell</span>
+            <span class="pill">Wireshark</span>
+            <span class="pill">Nmap</span>
+            <span class="pill">Metasploit</span>
+            <span class="pill">Burp Suite</span>
+            <span class="pill">Data Analysis</span>
+            <span class="pill">LaTeX</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider" aria-hidden="true">
+  <span class="sym">&nabla; &#10005; F</span>
+</div>
+
+<!-- ── CURRENT POSITION ── -->
+<section id="position">
+  <span class="decor faint hide-sm" style="top:40px;right:80px;font-size:160px;color:var(--sky-deep);font-style:italic">&int;</span>
+  <span class="decor soft hide-sm" style="bottom:60px;left:40px;font-size:90px;color:var(--sky);font-family:'JetBrains Mono',monospace">&infin;</span>
+  <div class="container">
+    <div class="sec-label">02 · Position</div>
+    <h2 class="sec-title">Where I <em>Research</em>.</h2>
+
+    <div class="timeline">
+      <div class="edu-item">
+        <div class="edu-year">
+          <img class="work-logo" src="images/logos/Brandeis.webp" alt="Brandeis University Seal">
+        </div>
+        <div>
+          <div class="edu-school">Research Assistant<br><span class="sub">Securitas eX Machina Cybersecurity Research Lab</span></div>
+          <div class="edu-meta">May 2026 &rarr; <span class="now">Now</span> · Advised by Prof. Kostas Solomos</div>
+          <p style="color:var(--ink-soft);font-size:15px;margin-top:8px;max-width:520px">
+            I'm a research assistant at the newly established Securitas eX Machina (SxM) Cybersecurity Research Lab,
+            affiliated with the Michtom School of Computer Science at Brandeis University. Working with my faculty mentor,
+            Professor Kostas Solomos, I contribute to web and network security research projects from measuring how
+            real systems behave to prototyping and evaluating defenses.
+          </p>
+          <div class="pill-row" style="margin-top:14px">
+            <b>Lab Links</b>
+            <div class="pills">
+              <a class="pill" href="https://www.brandeis.edu/computer-science/research/index.html" target="_blank" rel="noopener">SxM Lab</a>
+              <a class="pill" href="https://www.brandeis.edu/computer-science/" target="_blank" rel="noopener">Michtom School of Computer Science</a>
+            </div>
+          </div>
+        </div>
+        <img class="work-photo" src="images/logos/Lab.webp" alt="Securitas eX Machina Cybersecurity Research Lab">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider" aria-hidden="true">
+  <span class="sym">f(z)</span>
+</div>
+
+<!-- ── FELLOWSHIP ── -->
+<section id="fellowship">
+  <span class="decor faint hide-sm" style="top:30px;left:50px;font-size:120px;color:var(--sky-deep);font-style:italic">&sum;</span>
+  <span class="decor soft hide-sm" style="top:60px;right:200px;font-size:110px;color:var(--sky-deep);transform:rotate(8deg)">&#9819;</span>
+  <div class="container">
+    <div class="sec-label">03 · Fellowship</div>
+    <h2 class="sec-title">Support &amp; <em>Funding</em>.</h2>
+
+    <div class="ec-grid">
+      <div class="ec">
+        <div class="badge">Fellow</div>
+        <h3>Jerome A. Schiff Undergraduate Research Fellowship</h3>
+        <div class="role">2026 &ndash; 2027 · Brandeis University</div>
+        <p>
+          Selected as a 2026&ndash;2027 Jerome A. Schiff Undergraduate Research Fellow, a competitive award supporting
+          year-long independent research and a culminating senior thesis.
+        </p>
+        <p>
+          The fellowship funds my work in the SxM Lab and the thesis I'm developing out of it.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider" aria-hidden="true">
+  <span class="sym">&conint; f(z)dz</span>
+</div>
+
+<!-- ── PUBLICATIONS ── -->
+<section id="publications">
+  <span class="decor faint hide-sm" style="top:30px;right:100px;font-size:90px;color:var(--sky-deep);font-style:italic">&lambda;</span>
+  <div class="container">
+    <div class="sec-label">04 · Output</div>
+    <h2 class="sec-title">Papers &amp; <em>Writing</em>.</h2>
+
+    <div class="goals-log">
+      <div class="head">
+        <span>publications.log</span>
+        <span class="track">IN PROGRESS</span>
+      </div>
+      <ul>
+        <li class="wip"><span class="box"></span><span class="txt">Security &amp; Privacy Assesement of Social Media Apps</span><span class="when">2026 &rarr; Now</span></li>
+        <li class="wip"><span class="box"></span><span class="txt">Comparative Analysis of Algorithmic Intrusion Detection</span><span class="when">2026 &rarr; Now</span></li>
+        <li><span class="box"></span><span class="txt">Implications of Meta's E2EE Demise</span><span class="when">Ongoing</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider" aria-hidden="true">
+  <span class="sym">lim<sub>t&rarr;&infin;</sub></span>
+</div>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-wrap">
+      <div class="sec-label">05 · Contact</div>
+      <h2 class="sec-title">Talk <em>Research</em>.</h2>
+      <p>
+        Interested in my work, a potential collaboration, or research opportunities? Reach out!
+        I read every message and respond promptly.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:cameron.chase@gmail.com" class="primary">Email</a>
+        <a href="https://www.linkedin.com/in/cameronschase/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/cameronschase" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container row">
+    <span>&copy; 2026 Cameron Chase · Built in <span class="col-trick">HTML + CSS</span></span>
+    <span>&uarr; <a href="index.html">Home</a></span>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
