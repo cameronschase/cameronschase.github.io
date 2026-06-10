@@ -673,6 +673,9 @@ h1.title .blue{color:var(--sky-deep);font-style:italic}
 }
 .empty.show{display:block}
 
+/* gated links carry no href (URL is in data-href) — keep them link-like */
+a[data-gated]{cursor:pointer}
+
 /* reCAPTCHA gate modal — shares the lightbox's blurred backdrop */
 .captcha-gate{
   position:fixed;inset:0;background:rgba(20,20,20,.85);

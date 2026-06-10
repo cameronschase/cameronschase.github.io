@@ -146,13 +146,16 @@
     const open  = () => gate.classList.add('show');
     const close = () => { gate.classList.remove('show'); pending = null; };
 
-    // Run the link the visitor originally clicked, preserving
-    // download behaviour and new-tab targets.
+    // Run the link the visitor originally clicked. The real URL
+    // lives in data-href (never in href) so middle-click,
+    // Ctrl/Cmd-click and "open in new tab" have nothing to open.
     const proceed = (link) => {
+      const url = link.dataset.href;
+      if (!url) return;
       const a = document.createElement('a');
-      a.href = link.href;
-      if (link.hasAttribute('download')) a.download = link.getAttribute('download') || '';
-      if (link.target) a.target = link.target;
+      a.href = url;
+      if (link.dataset.download != null) a.download = link.dataset.download;
+      if (link.dataset.target) a.target = link.dataset.target;
       document.body.appendChild(a);
       a.click();
       a.remove();
@@ -178,12 +181,13 @@
       });
     };
 
-    document.querySelectorAll('a[data-gated]').forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        pending = link;
-        open();
-        renderWidget();
+    const trigger = (link) => { pending = link; open(); renderWidget(); };
+
+    document.querySelectorAll('[data-gated]').forEach(link => {
+      link.addEventListener('click', e => { e.preventDefault(); trigger(link); });
+      // these are role="button" links with no href, so support keyboard
+      link.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); trigger(link); }
       });
     });
 
