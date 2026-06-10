@@ -102,7 +102,7 @@
         shipping personal projects, running a chess club, editing a law journal, and being as outdoorsy as possible.
       </p>
       <div class="quick">
-        <span>Looking for Summer 2026 Internship Opportunities</span>
+        <span>Looking for Fall 2027 Graduate Programs</span>
         <span>Contact Me!</span>
       </div>
     </div>
@@ -163,9 +163,9 @@
           <dt>Currently:</dt><dd>Waltham, MA</dd>
           <dt>Links:</dt><dd><a href="https://github.com/cameronschase" target="_blank">GitHub</a> · 
             <a href="https://www.linkedin.com/in/cameronschase/" target="_blank">LinkedIn</a> · 
-            <a href="mailto:cameron.chase@gmail.com" target="_blank">Email</a></dd>
+            <a href="mailto:cameron.chase@gmail.com" target="_blank" data-gated>Email</a></dd>
         </dl>
-        <a href="documents/Cameron Chase Resume.pdf" class="download" download>
+        <a href="documents/Cameron Chase Resume (Redacted).pdf" class="download" download data-gated>
           &darr; Download Resume
         </a>
       </div>
@@ -245,10 +245,10 @@
           <div class="pill-row">
             <b>toolbox</b>
             <div class="pills">
-              <span class="pill hot">Python</span>
-              <span class="pill hot">Java</span>
-              <span class="pill cool">C</span>
-              <span class="pill cool">JavaScript</span>
+              <span class="pill">Python</span>
+              <span class="pill">Java</span>
+              <span class="pill">C</span>
+              <span class="pill">JavaScript</span>
               <span class="pill">Node.js</span>
               <span class="pill">Shell</span>
               <span class="pill">Git</span>
@@ -463,7 +463,7 @@
         I read every message and respond promptly.
       </p>
       <div class="contact-links">
-        <a href="mailto:cameron.chase@gmail.com" class="primary">Email</a>
+        <a href="mailto:cameron.chase@gmail.com" class="primary" data-gated>Email</a>
         <a href="https://www.linkedin.com/in/cameronschase/" target="_blank">LinkedIn</a>
         <a href="https://github.com/cameronschase" target="_blank">GitHub</a>
         <a href="https://linktr.ee/cameronchase" target="_blank">LinkTree</a>
@@ -479,6 +479,19 @@
   </div>
 </footer>
 
+<!-- ── reCAPTCHA gate ── -->
+<div id="captchaGate" class="captcha-gate" aria-hidden="true">
+  <div class="frame" role="dialog" aria-modal="true" aria-labelledby="captchaTitle">
+    <button class="close" id="captchaClose" type="button" aria-label="Close">&times;</button>
+    <div class="sec-label">Sorry, I <em>Always</em> Use Protection</div>
+    <h3 id="captchaTitle">Ermm Are You Human Though?</h3>
+    <p id="captchaMsg">Prove it.</p>
+    <div id="captchaBox"
+         data-sitekey="6Lcuxq0qAAAAAIgUWtITKL3QFa4OOsFlQwD1K98I"></div>
+  </div>
+</div>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="script.js" defer></script>
 </body>
 </html>

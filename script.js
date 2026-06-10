@@ -132,4 +132,64 @@
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
   }
 
+  /* ─── HOME: reCAPTCHA gate ───────────────────────────
+     Any link with data-gated (résumé, email) is intercepted:
+     we pop the captcha modal, and only run the original
+     action once the checkbox is solved. */
+  const gate = document.getElementById('captchaGate');
+  if (gate) {
+    const box       = document.getElementById('captchaBox');
+    const closeGate = document.getElementById('captchaClose');
+    let widgetId    = null;   // grecaptcha widget handle, rendered lazily
+    let pending     = null;   // the <a> the visitor clicked
+
+    const open  = () => gate.classList.add('show');
+    const close = () => { gate.classList.remove('show'); pending = null; };
+
+    // Run the link the visitor originally clicked, preserving
+    // download behaviour and new-tab targets.
+    const proceed = (link) => {
+      const a = document.createElement('a');
+      a.href = link.href;
+      if (link.hasAttribute('download')) a.download = link.getAttribute('download') || '';
+      if (link.target) a.target = link.target;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    };
+
+    // Called by reCAPTCHA when the checkbox is solved.
+    window.onCaptchaPass = () => {
+      const link = pending;
+      close();
+      if (window.grecaptcha && widgetId !== null) grecaptcha.reset(widgetId);
+      if (link) proceed(link);
+    };
+
+    // Render the widget the first time the modal opens (it needs
+    // the grecaptcha script, which loads async).
+    const renderWidget = () => {
+      if (widgetId !== null) return;
+      if (!window.grecaptcha || !grecaptcha.render) { setTimeout(renderWidget, 150); return; }
+      widgetId = grecaptcha.render(box, {
+        sitekey:  box.dataset.sitekey,
+        callback: 'onCaptchaPass',
+        theme:    document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light'
+      });
+    };
+
+    document.querySelectorAll('a[data-gated]').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        pending = link;
+        open();
+        renderWidget();
+      });
+    });
+
+    closeGate.addEventListener('click', close);
+    gate.addEventListener('click', e => { if (e.target === gate) close(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+  }
+
 })();

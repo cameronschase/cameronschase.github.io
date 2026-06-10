@@ -672,3 +672,37 @@ h1.title .blue{color:var(--sky-deep);font-style:italic}
   display:none;
 }
 .empty.show{display:block}
+
+/* reCAPTCHA gate modal — shares the lightbox's blurred backdrop */
+.captcha-gate{
+  position:fixed;inset:0;background:rgba(20,20,20,.85);
+  display:none;align-items:center;justify-content:center;
+  z-index:200;padding:40px;backdrop-filter:blur(6px);
+}
+.captcha-gate.show{display:flex}
+.captcha-gate .frame{
+  position:relative;background:var(--paper);color:var(--ink);
+  padding:32px 32px 36px;max-width:420px;width:100%;
+  box-shadow:0 24px 80px rgba(0,0,0,.5);
+  transform:rotate(-1deg);animation:pop .25s ease-out;
+}
+.captcha-gate .sec-label{
+  font-family:'JetBrains Mono',monospace;font-size:12px;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--rust);
+  margin-bottom:10px;
+}
+.captcha-gate h3{
+  font-family:'Instrument Serif',serif;font-size:30px;
+  margin:0 0 8px;font-weight:400;
+}
+.captcha-gate p{
+  font-size:14px;color:var(--muted);margin:0 0 22px;
+}
+.captcha-gate .close{
+  position:absolute;top:14px;right:14px;
+  background:var(--paper);color:var(--ink);
+  border:1.5px solid var(--ink);border-radius:999px;
+  width:34px;height:34px;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;font-size:18px;line-height:1;
+}
+.captcha-gate .close:hover{background:var(--ink);color:var(--paper)}
